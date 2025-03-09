@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/RoleModel/rolemodel_rails.git
+  revision: b07a938e1adc143b950c104e11dba30171289233
+  specs:
+    rolemodel_rails (0.13.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -345,6 +351,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  rolemodel_rails!
   rubocop-rails-omakase
   solid_cable
   solid_cache
