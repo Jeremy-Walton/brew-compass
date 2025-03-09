@@ -1,1 +1,4 @@
 /* Entry point for your PostCSS build */
+
+/* Optics + Phosphor Icons */
+@import '@rolemodel/optics';
