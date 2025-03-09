@@ -417,6 +417,8 @@ DEPENDENCIES
   rails (~> 8.0.1)
   rolemodel_rails!
   rspec-rails
+  rubocop
+  rubocop-rails
   rubocop-rails-omakase
   simple_form (~> 5.3)
   slim (~> 5.2)
