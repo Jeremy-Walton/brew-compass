@@ -1,6 +1,8 @@
-require:
+plugins:
   - rubocop-rails
-  - ./lib/cops/form_error_response.rb
+
+require:
+  - ./lib/custom_cops/form_error_response.rb
 
 AllCops:
   Exclude:
@@ -63,4 +65,10 @@ Style:
 
 # It is ok to use inject at times
 Style/EachWithObject:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
   Enabled: false

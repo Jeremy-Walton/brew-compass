@@ -11,14 +11,14 @@
 module ActionView
   module Helpers
     class FormBuilder
-      def tailored_select(method, collection, value_method, text_method, options = {}, html_options = {})
+      def tailored_select(method, collection, value_method, text_method, options = {}, html_options = {}) # rubocop:disable Metrics/ParameterLists
         @template.tailored_select(@object_name, method, collection, value_method, text_method,
                                   objectify_options(options), @default_html_options.merge(html_options))
       end
     end
 
     module FormOptionsHelper
-      def tailored_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
+      def tailored_select(object, method, collection, value_method, text_method, options = {}, html_options = {}) # rubocop:disable Metrics/ParameterLists
         Tags::TailoredSelect.new(object, method, self, collection, value_method, text_method, options,
                                  html_options).render
       end
@@ -28,7 +28,7 @@ module ActionView
       class TailoredSelect < CollectionSelect
         private
 
-        def select_content_tag(option_tags, options, html_options)
+        def select_content_tag(option_tags, options, html_options) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
           html_options = html_options.stringify_keys
           %i[required multiple size].each do |prop|
             html_options[prop.to_s] = options.delete(prop) if options.key?(prop) && !html_options.key?(prop.to_s)
@@ -50,8 +50,8 @@ module ActionView
           select = content_tag('tailored-select', add_options(option_tags, options, value), html_options)
 
           if html_options['multiple'] && options.fetch(:include_hidden, true)
-            tag('input', disabled: html_options['disabled'], name: html_options['name'], type: 'hidden', value: '',
-                         autocomplete: 'off') + select
+            tag.input(disabled: html_options['disabled'], name: html_options['name'], type: 'hidden', value: '',
+                      autocomplete: 'off') + select
           else
             select
           end

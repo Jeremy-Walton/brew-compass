@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # All runtime asset dependencies should be bundled by Webpack during asset precompilation.
 # Therefore, the node_modules directory can be removed after assets are compiled to significantly reduce slug size.
 # In rare cases, you may have a runtime dependency into node_modules directly. If this is the case and you are unable
