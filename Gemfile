@@ -52,10 +52,19 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem "rolemodel_rails", github: "RoleModel/rolemodel_rails"
+end
+
+group :test do
+  gem "capybara"
+  gem "webdrivers"
+  gem "test-prof"
 end
