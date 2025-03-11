@@ -3,7 +3,10 @@
 // See https://github.com/hotwired/turbo/pull/863 for details.
 
 document.addEventListener('turbo:frame-missing', (event) => {
-  if (process.env.RAILS_ENV === 'production' || event.target.id === 'modal' || event.target.id === 'panel') {
+  const rails_env = document.querySelector('meta[name="rails_env"]').content
+  const event_target_id = event.target.id
+
+  if (rails_env === 'production' || ['modal', 'panel'].includes(event_target_id)) {
     event.preventDefault()
     /**
      * These visit options cause Turbo8 to treat this _breakout_ visit as a

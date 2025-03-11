@@ -1,0 +1,7 @@
+.navbar {
+  .navbar__brand {
+    img {
+      width: 100%;
+    }
+  }
+}

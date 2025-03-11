@@ -1,5 +1,0 @@
-/* Entry point for your PostCSS build */
-
-/* Optics + Phosphor Icons */
-@import '@rolemodel/optics';
-@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
