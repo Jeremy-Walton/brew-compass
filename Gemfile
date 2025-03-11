@@ -30,6 +30,9 @@ gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
 
+# Validation
+gem 'rubocop'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
@@ -56,7 +59,6 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'rubocop'
   gem 'rubocop-rails'
 end
 
