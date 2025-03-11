@@ -21,9 +21,6 @@
       "url":"heroku/metrics"
     },
     {
-      "url": "heroku/nodejs"
-    },
-    {
       "url": "heroku/ruby"
     }
   ]

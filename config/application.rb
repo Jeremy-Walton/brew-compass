@@ -1,3 +1,4 @@
+require File.expand_path('../../env', __FILE__)
 require_relative "boot"
 
 require "rails"

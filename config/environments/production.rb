@@ -1,4 +1,5 @@
 require "active_support/core_ext/integer/time"
+require_relative Rails.root.join('lib/middleware/rolemodel/source_map.rb')
 
 Rails.application.configure do
 
