@@ -1,8 +1,9 @@
 require "active_support/core_ext/integer/time"
+require_relative Rails.root.join('lib/middleware/brew_compass/source_map.rb')
 
 Rails.application.configure do
 
-config.middleware.use  Rolemodel::SourceMap
+  config.middleware.use  Middleware::BrewCompass::SourceMap
 
   # Settings specified here will take precedence over those in config/application.rb.
 

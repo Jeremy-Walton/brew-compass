@@ -81,8 +81,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: brew_compass_production
-    username: brew_compass
+    url: <%= ENV["DATABASE_URL"] %>
     password: <%= ENV["BREW_COMPASS_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production

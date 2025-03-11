@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+ruby '3.3.7'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 8.0.1'
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -27,6 +29,9 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
+
+# Validation
+gem 'rubocop'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -54,7 +59,6 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'rubocop'
   gem 'rubocop-rails'
 end
 
