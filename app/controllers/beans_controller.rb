@@ -14,12 +14,14 @@ class BeansController < ApplicationController
   end
 
   def edit
+    # @bean = current_user.beans.find(params[:id])
     @bean = Bean.find(params[:id])
 
     render layout: 'modal'
   end
 
   def create
+    # @bean = current_user.beans.new(bean_params)
     @bean = Bean.new(bean_params)
 
     if @bean.save
@@ -30,6 +32,7 @@ class BeansController < ApplicationController
   end
 
   def update
+    # @bean = current_user.beans.find(params[:id])
     @bean = Bean.find(params[:id])
 
     if @bean.update(bean_params)
