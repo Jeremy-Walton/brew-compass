@@ -45,6 +45,7 @@ gem 'thruster', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'active_link_to'
 gem 'lograge', '~> 0.14.0'
 gem 'simple_form', '~> 5.3'
 gem 'slim', '~> 5.2'

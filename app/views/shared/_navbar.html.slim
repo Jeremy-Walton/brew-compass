@@ -3,12 +3,6 @@
     = image_tag 'logo-navbar.webp', alt: 'Brew Compass', class: 'navbar__logo'
 
   nav.navbar__content.navbar__content--justify-start
-    = link_to root_path, class: 'btn btn--no-border btn--active' do
-      = icon('coffee-bean')
+    = active_link_to root_path, class: 'btn btn--no-border', class_active: 'btn--active', active: [['pages'], ['home']] do
+      = icon('compass')
       | Home
-    = modal_link_to brew_pages_path, class: 'btn btn--no-border' do
-      = icon('coffee')
-      | Modal Example
-    = link_to root_path, class: 'btn btn--no-border', data: { turbo_method: :delete, 'turbo_confirm': 'Are you sure?' } do
-      = icon('skull')
-      | Confirm Example
