@@ -1,0 +1,7 @@
+#flash data-turbo-temporary="true"
+  - flash.each do |type, msg|
+    .alert.alert--flash class="alert--#{type}" data-testid="flash-notification"
+      = flash_icon(type, additional_classes: 'alert__icon')
+      .alert__messages
+        .alert__title = type.humanize
+        .alert__description = msg

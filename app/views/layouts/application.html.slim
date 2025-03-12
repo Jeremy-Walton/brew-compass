@@ -9,5 +9,6 @@ html lang='en'
     main.app__content
       = turbo_frame_tag 'modal'
       = render 'confirm'
+      = render 'shared/flash'
 
       = yield

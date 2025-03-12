@@ -1,0 +1,4 @@
+.page-section {
+  display: grid;
+  gap: var(--op-space-medium);
+}

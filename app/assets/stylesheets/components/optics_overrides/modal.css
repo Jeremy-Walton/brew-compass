@@ -1,0 +1,3 @@
+.modal {
+  --_op-modal-width: calc(var(--op-size-unit)* 200); /* 800px */
+}
