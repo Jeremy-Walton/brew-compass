@@ -15,6 +15,7 @@ module TurboFrameLinkHelper
     data_option = { data: options.fetch(:data, {}).reverse_merge({ turbo_frame: frame }) }
 
     if block_given?
+      data_option = { data: url.fetch(:data, {}).reverse_merge({ turbo_frame: frame }) }
       link_to(name, (url || {}).merge(data_option), &)
     else
       link_to(name, url, options.merge(data_option))

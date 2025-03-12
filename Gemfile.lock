@@ -50,6 +50,9 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     activejob (8.0.1)
       activesupport (= 8.0.1)
       globalid (>= 0.3.6)
@@ -313,6 +316,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (6.4.0)
+      activesupport (>= 5.2.0)
     simple_form (5.3.1)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -400,6 +405,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  active_link_to
   bootsnap
   brakeman
   capybara
@@ -416,6 +422,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubocop-rails
+  shoulda-matchers (~> 6.0)
   simple_form (~> 5.3)
   slim (~> 5.2)
   slim-rails (~> 3.7)

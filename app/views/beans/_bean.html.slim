@@ -1,0 +1,33 @@
+-# locals: (bean:)
+
+.card data-testid=dom_id(bean)
+  .card__header
+    .flex.justify-between
+      .flex.gap-md
+        span = bean.name
+        - if bean.decaf?
+          .icon.icon--x-large.icon--stack data-tooltip-text="Decaf" data-tooltip-position="right"
+            = icon('coffee-bean', size: 'small')
+            = icon('prohibit', size: 'x-large')
+      .flex.gap-md
+        = modal_link_to edit_bean_path(bean), class: 'btn btn--icon btn--no-border btn--small', data: { 'tooltip-text': 'Edit', 'tooltip-position': 'left' } do
+          = icon('pencil-simple')
+          .sr-only Edit
+        = button_to bean_path(bean), method: :delete, class: 'btn btn--icon btn--destructive btn--small', data: { 'tooltip-text': 'Delete', 'tooltip-position': 'left', turbo_confirm: 'Are you sure?' } do
+          = icon('trash')
+          .sr-only Delete
+  .card__body
+    .flex.gap-xl
+      .text-pair
+        span.text-pair__title Roaster
+        span.text-pair__subtitle = bean.roaster
+      .text-pair
+        span.text-pair__title Roast Date
+        span.text-pair__subtitle = bean.roast_date
+      .text-pair
+        span.text-pair__title Tasting Notes
+        span.text-pair__subtitle = bean.taste_profile
+      .text-pair
+        span.text-pair__title Notes
+        span.text-pair__subtitle = bean.notes
+  .card__header

@@ -1,0 +1,7 @@
+section.page-section
+  .flex.justify-between.items-center
+    h1 Beans
+    = modal_link_to 'New Bean', new_bean_path, class: 'btn btn--primary'
+
+section.page-section
+  = render @beans

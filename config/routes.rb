@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get :brew, on: :collection
   end
 
+  resources :beans
+
   # Defines the root path route ("/")
   root "pages#home"
 end
