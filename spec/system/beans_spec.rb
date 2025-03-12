@@ -50,4 +50,18 @@ RSpec.describe 'Beans', type: :system do
     expect(page).to have_content('Bean was successfully updated.')
     expect(bean.reload.name).to eq 'Edited Bean'
   end
+
+  it 'allows a user to delete a bean' do
+    bean = create(:bean)
+    visit beans_path
+
+    within data_test(dom_id(bean)) do
+      click_on 'Delete'
+    end
+
+    click_on 'Yes, I\'m Sure'
+
+    expect(page).to have_content('Bean was successfully deleted.')
+    expect(Bean.count).to eq 0
+  end
 end

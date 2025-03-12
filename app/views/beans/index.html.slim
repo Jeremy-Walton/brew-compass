@@ -4,31 +4,4 @@ section.page-section
     = modal_link_to 'New Bean', new_bean_path, class: 'btn btn--primary'
 
 section.page-section
-  - @beans.each do |bean|
-    .card data-testid=dom_id(bean)
-      .card__header
-        .flex.justify-between
-          .flex.gap-md
-            span = bean.name
-            - if bean.decaf?
-              .icon.icon--x-large.icon--stack data-tooltip-text="Decaf" data-tooltip-position="right"
-                = icon('coffee-bean', size: 'small')
-                = icon('prohibit', size: 'x-large')
-          = modal_link_to edit_bean_path(bean), class: 'btn btn--icon btn--no-border btn--small', data: { 'tooltip-text': 'Edit', 'tooltip-position': 'left' } do
-            = icon('pencil-simple')
-            .sr-only Edit
-      .card__body
-        .flex.gap-xl
-          .text-pair
-            span.text-pair__title Roaster
-            span.text-pair__subtitle = bean.roaster
-          .text-pair
-            span.text-pair__title Roast Date
-            span.text-pair__subtitle = bean.roast_date
-          .text-pair
-            span.text-pair__title Tasting Notes
-            span.text-pair__subtitle = bean.taste_profile
-          .text-pair
-            span.text-pair__title Notes
-            span.text-pair__subtitle = bean.notes
-      .card__header
+  = render @beans

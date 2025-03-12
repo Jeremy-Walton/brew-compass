@@ -39,6 +39,13 @@ class BeansController < ApplicationController
     end
   end
 
+  def destroy
+    @bean = Bean.find(params[:id])
+    @bean.destroy
+
+    redirect_to beans_path, notice: 'Bean was successfully deleted.'
+  end
+
   private
 
   def bean_params
