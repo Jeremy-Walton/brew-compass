@@ -1,0 +1,18 @@
+-# locals: (brewing_method:)
+
+.card data-testid=dom_id(brewing_method)
+  .card__header
+    .flex.justify-between
+      span = brewing_method.name
+      .flex.gap-md
+        = modal_link_to edit_brewing_method_path(brewing_method), class: 'btn btn--icon btn--no-border btn--small', data: { 'tooltip-text': 'Edit', 'tooltip-position': 'left' } do
+          = icon('pencil-simple')
+          .sr-only Edit
+        = button_to brewing_method_path(brewing_method), method: :delete, class: 'btn btn--icon btn--destructive btn--small', data: { 'tooltip-text': 'Delete', 'tooltip-position': 'left', turbo_confirm: 'Are you sure?' } do
+          = icon('trash')
+          .sr-only Delete
+  .card__body
+    .flex.gap-xl
+      .text-pair
+        span.text-pair__title Prep Type
+        span.text-pair__subtitle = brewing_method.prep_type.humanize
