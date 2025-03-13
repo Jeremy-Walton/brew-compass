@@ -17,7 +17,10 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  # https://judoscale.com/blog/opinionated-guide-to-configuring-rails-on-heroku
+  # The current Heroku DB plan is 20 connections, so we set the pool to 20.
+  pool: 20
 
 
 development:
