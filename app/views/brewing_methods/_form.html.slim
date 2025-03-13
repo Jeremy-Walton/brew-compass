@@ -1,0 +1,6 @@
+= simple_form_for @brewing_method do |f|
+  = f.input :name, placeholder: 'e.g. French Press'
+  = f.input :prep_type, collection: brewing_method_prep_type_options, prompt: 'Select a Prep Type'
+
+  - content_for :modal_actions do
+    = f.submit class: 'btn btn--primary', form: f.id
