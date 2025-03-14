@@ -1,2 +1,1 @@
-web: bundle exec puma -C config/puma.rb
-release: bin/rails db:migrate
+web: TARGET_PORT=$PORT bundle exec thrust bin/start-app
