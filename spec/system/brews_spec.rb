@@ -15,13 +15,13 @@ RSpec.describe 'Brewings', type: :system do
     end
   end
 
-  it 'allows a user to create a brew' do
+  it 'allows a user to create a brew', :js do
     visit brews_path
     click_on 'New Brew'
 
     select brewing_method.name, from: 'Brewing method'
     select bean.name, from: 'Bean'
-    select 'Five', from: 'Rating'
+    shoelace_select_rating('brew_rating', 'five')
 
     click_on 'Create Brew'
 

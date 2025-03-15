@@ -1,7 +1,11 @@
 = simple_form_for @brew do |f|
   = f.association :bean, placeholder: 'Select Bean'
   = f.association :brewing_method, placeholder: 'Select Brewing Method'
-  = f.input :rating, collection: brew_rating_options, prompt: 'Select a Rating'
+
+  .form-group data-controller='rating-input' data-rating-input-options-value=Brew.ratings.to_json
+    = f.label :rating
+    = f.hidden_field :rating, data: { 'rating-input-target': 'input' }
+    sl-rating label="Rating" name='brew[rating]' id='brew_rating' value=Brew.ratings[@brew.rating] max=Brew.ratings[:five] data-action="sl-change->rating-input#change"
 
   - content_for :modal_actions do
     = f.submit class: 'btn btn--primary', form: f.id
