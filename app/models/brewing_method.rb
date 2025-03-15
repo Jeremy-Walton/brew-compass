@@ -11,4 +11,6 @@ class BrewingMethod < ApplicationRecord
   }, validate: true
 
   validates :name, presence: true
+
+  has_many :brews, dependent: :restrict_with_error
 end
