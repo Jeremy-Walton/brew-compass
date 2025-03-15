@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     get :brew, on: :collection
   end
 
-  resources :beans
-  resources :brewing_methods
-  resources :brews
+  resources :beans, except: :show
+  resources :brewing_methods, except: :show
+  resources :brews, except: :show
 
   # Defines the root path route ("/")
   root "pages#home"
