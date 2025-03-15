@@ -1,0 +1,28 @@
+-# locals: (brew:)
+
+.card data-testid=dom_id(brew)
+  .card__header
+    .flex.justify-between
+      .flex.gap-md
+        span = brew.bean.name
+      .flex.gap-md
+        = modal_link_to edit_brew_path(brew), class: 'btn btn--icon btn--no-border btn--small', data: { 'tooltip-text': 'Edit', 'tooltip-position': 'left' } do
+          = icon('pencil-simple')
+          .sr-only Edit
+        = button_to brew_path(brew), method: :delete, class: 'btn btn--icon btn--destructive btn--small', data: { 'tooltip-text': 'Delete', 'tooltip-position': 'left', turbo_confirm: 'Are you sure?' } do
+          = icon('trash')
+          .sr-only Delete
+  .card__body
+    .flex.gap-xl
+      .text-pair
+        span.text-pair__title Date
+        span.text-pair__subtitle = brew.created_at.strftime('%B %d, %Y')
+      .text-pair
+        span.text-pair__title Bean
+        span.text-pair__subtitle = brew.bean.name
+      .text-pair
+        span.text-pair__title Brewing Method
+        span.text-pair__subtitle = brew.brewing_method.name
+      .text-pair
+        span.text-pair__title Rating
+        span.text-pair__subtitle = brew.rating.humanize

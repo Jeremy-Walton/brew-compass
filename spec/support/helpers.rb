@@ -9,4 +9,5 @@ RSpec.configure do |c|
   c.include ActionCableHelper, type: :system
   c.include SelectHelper, type: :system
   c.include TestElementHelper, type: :system
+  c.include ShoelaceHelper, type: :system
 end

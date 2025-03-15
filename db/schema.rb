@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_12_233612) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_15_181153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -31,4 +31,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_12_233612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "brews", force: :cascade do |t|
+    t.bigint "brewing_method_id", null: false
+    t.bigint "bean_id", null: false
+    t.integer "rating", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bean_id"], name: "index_brews_on_bean_id"
+    t.index ["brewing_method_id"], name: "index_brews_on_brewing_method_id"
+  end
+
+  add_foreign_key "brews", "beans"
+  add_foreign_key "brews", "brewing_methods"
 end
