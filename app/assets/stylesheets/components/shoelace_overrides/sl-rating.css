@@ -1,4 +1,9 @@
 sl-rating {
   /* icon--x-large */
   --symbol-size: var(--op-font-2x-large);
+
+  &.sl-rating--small {
+    /* icon--large */
+    --symbol-size: var(--op-font-large);
+  }
 }

@@ -25,4 +25,4 @@
         span.text-pair__subtitle = brew.brewing_method.name
       .text-pair
         span.text-pair__title Rating
-        span.text-pair__subtitle = brew.rating.humanize
+        sl-rating.sl-rating--small label="Rating" readonly='readonly' value=Brew.ratings[brew.rating]
