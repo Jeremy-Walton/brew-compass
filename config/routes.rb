@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :beans
   resources :brewing_methods
+  resources :brews
 
   # Defines the root path route ("/")
   root "pages#home"

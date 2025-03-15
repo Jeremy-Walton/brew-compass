@@ -3,7 +3,7 @@ class CreateBrews < ActiveRecord::Migration[8.0]
     create_table :brews do |t|
       t.belongs_to :brewing_method, null: false, foreign_key: true
       t.belongs_to :bean, null: false, foreign_key: true
-      t.integer :rating
+      t.integer :rating, null: false, default: 1
 
       t.timestamps
     end

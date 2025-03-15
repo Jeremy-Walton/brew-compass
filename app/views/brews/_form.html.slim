@@ -1,0 +1,7 @@
+= simple_form_for @brew do |f|
+  = f.association :bean, placeholder: 'Select Bean'
+  = f.association :brewing_method, placeholder: 'Select Brewing Method'
+  = f.input :rating, collection: brew_rating_options, prompt: 'Select a Rating'
+
+  - content_for :modal_actions do
+    = f.submit class: 'btn btn--primary', form: f.id

@@ -35,7 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_15_181153) do
   create_table "brews", force: :cascade do |t|
     t.bigint "brewing_method_id", null: false
     t.bigint "bean_id", null: false
-    t.integer "rating"
+    t.integer "rating", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bean_id"], name: "index_brews_on_bean_id"
