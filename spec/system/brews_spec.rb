@@ -3,8 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Brewings', type: :system do
+  let!(:user) { create(:user, :regular_user) }
   let!(:brewing_method) { create(:brewing_method, name: 'Demo Method') }
   let!(:bean) { create(:bean) }
+
+  before do
+    sign_in user
+  end
 
   it 'lists brews' do
     brews = create_list(:brew, 3)

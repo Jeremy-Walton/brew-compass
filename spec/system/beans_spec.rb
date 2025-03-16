@@ -3,6 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Beans', type: :system do
+  let!(:user) { create(:user, :regular_user) }
+
+  before do
+    sign_in user
+  end
+
   it 'lists beans' do
     beans = create_list(:bean, 3)
     visit beans_path

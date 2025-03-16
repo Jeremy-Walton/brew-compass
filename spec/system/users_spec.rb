@@ -44,7 +44,7 @@ RSpec.describe 'Users', type: :system do
 
       fill_in 'Email', with: user.email
       fill_in 'Password', with: password
-      click_on 'Login'
+      click_on 'Log In'
 
       expect(page).to have_current_path(root_path)
       expect(page).to have_content('Signed in successfully.')
@@ -61,10 +61,11 @@ RSpec.describe 'Users', type: :system do
     it 'allows user to sign out' do
       visit root_path
 
-      click_on 'Sign Out'
+      find('.menu__trigger').click
+      click_on 'Log Out'
 
       expect(page).to have_current_path(new_user_session_path)
-      expect(page).to have_content('Login')
+      expect(page).to have_content('Log In')
     end
   end
 
@@ -92,7 +93,9 @@ RSpec.describe 'Users', type: :system do
     it 'allows user to update account info' do
       visit root_path
 
-      click_on 'Edit Profile'
+      find('.menu__trigger').click
+      click_on 'Settings'
+
       fill_in 'First name', with: new_user_info[:first_name]
       fill_in 'Last name', with: new_user_info[:last_name]
       fill_in 'Email', with: new_user_info[:email]

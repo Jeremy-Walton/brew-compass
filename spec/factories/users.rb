@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :user do
     first_name { 'Default' }
     last_name { 'User' }
+    role { User.roles[:user] }
     sequence :email do |n|
       "person#{n}@example.com"
     end
