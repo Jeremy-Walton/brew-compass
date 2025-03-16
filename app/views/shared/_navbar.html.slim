@@ -20,4 +20,4 @@
         = icon('user-circle-gear')
         | Admin
   nav.navbar__content
-    = link_to 'Sign out', destroy_session_path(current_user), method: :delete
+    = button_to 'Sign out', destroy_session_path(current_user), method: :delete, class: 'btn btn--no-border'
