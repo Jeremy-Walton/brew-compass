@@ -1,0 +1,31 @@
+.app__login {
+  margin-block-start: var(--op-space-4x-large);
+  margin-inline: auto;
+  padding-inline: var(--op-space-large);
+  max-width: var(--op-breakpoint-x-small);
+}
+
+.card.card--login {
+  --_bc-login-image-width: calc(25 * var(--op-size-unit)); /* 100px */
+
+  .card__header {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: var(--_bc-login-image-width);
+    }
+  }
+
+  .card__body {
+    padding-block: 0;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: var(--op-space-x-small);
+  }
+}

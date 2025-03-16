@@ -1,0 +1,5 @@
+.devise-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--op-space-x-small);
+}
