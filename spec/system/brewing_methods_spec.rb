@@ -3,6 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Brewing Methods', type: :system do
+  let!(:user) { create(:user, :regular_user) }
+
+  before do
+    sign_in user
+  end
+
   it 'lists brewing methods' do
     brewing_methods = create_list(:brewing_method, 3)
     visit brewing_methods_path

@@ -1,0 +1,32 @@
+.app__login {
+  display: flex;
+  justify-content: center;
+  padding-block-start: var(--op-space-x-large);
+}
+
+.card.card--login {
+  --_bc-login-image-width: calc(25 * var(--op-size-unit)); /* 100px */
+
+  width: var(--op-breakpoint-x-small);
+
+  .card__header {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: var(--_bc-login-image-width);
+    }
+  }
+
+  .card__body {
+    padding-block: 0;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: var(--op-space-x-small);
+  }
+}

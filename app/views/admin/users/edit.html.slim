@@ -1,0 +1,10 @@
+- content_for :modal_title do
+  span Edit User
+
+= simple_form_for(@user, url: admin_user_path(@user), html: { method: :put }) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :email, required: true
+
+  - content_for :modal_actions do
+    = f.submit 'Update', class: 'btn btn--primary', form: f.id

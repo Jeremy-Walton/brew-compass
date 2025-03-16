@@ -47,6 +47,7 @@ gem 'thruster'
 
 gem 'active_link_to'
 gem 'barnes'
+gem 'devise', '~> 4.9'
 gem 'lograge', '~> 0.14.0'
 gem 'simple_form', '~> 5.3'
 gem 'slim', '~> 5.2'

@@ -3,8 +3,9 @@ html lang='en'
   head
     = render 'shared/head_content'
   body.app-body
-    header.app__header
-      = render 'shared/navbar'
+    - if current_user
+      header.app__header
+        = render 'shared/navbar'
 
     main.app__content
       = turbo_frame_tag 'modal'

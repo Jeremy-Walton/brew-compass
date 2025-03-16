@@ -1,0 +1,23 @@
+section.page-section
+  h1 Users
+
+section.page-section
+  table.table
+    thead
+      tr
+        th Login
+        th First name
+        th Last name
+        th Created at
+        th width="130px" Actions
+    tbody
+      - @users.each do |user|
+        tr
+          td = user.email
+          td = user.first_name
+          td = user.last_name
+          td = user.created_at
+          td
+            .flex.justify-end.gap-sm
+              = modal_link_to edit_admin_user_path(user), class: 'btn btn--no-border btn--icon btn--small' do
+                = icon('pencil')

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  # TODO: These probably should be updated
   resources :pages, only: %i[] do
     get :brew, on: :collection
   end
@@ -16,6 +21,10 @@ Rails.application.routes.draw do
   resources :beans, except: :show
   resources :brewing_methods, except: :show
   resources :brews, except: :show
+
+  namespace :admin do
+    resources :users, only: %i[index edit update]
+  end
 
   # Defines the root path route ("/")
   root "pages#home"

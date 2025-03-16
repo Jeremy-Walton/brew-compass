@@ -1,0 +1,151 @@
+.menu {
+  --_op-menu-panel-min-width: calc(var(--op-size-unit) * 30);
+  /* 120px */
+  --_op-menu-panel-trigger-distance: var(--op-space-small);
+
+  position: relative;
+  width: fit-content;
+
+  /* Elements */
+
+  .menu__panel {
+    position: absolute;
+    inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+    inset-inline-start: unset;
+    inset-inline-end: 0;
+    transform: unset;
+    margin: 0;
+    padding-block: var(--op-space-small);
+    padding-inline: 0;
+    min-width: var(--_op-menu-panel-min-width);
+
+    border: none;
+    box-shadow:
+      var(--op-border-all) var(--op-color-border),
+      var(--op-shadow-large);
+    background-color: var(--op-color-background);
+    color: var(--op-color-on-background);
+    border-radius: var(--op-radius-medium);
+    display: none;
+
+    .btn {
+      justify-content: space-around;
+      border-radius: 0;
+    }
+
+    &.menu__panel--open {
+      display: grid;
+    }
+  }
+
+  /* Modifiers */
+
+  &.menu--position-top-left {
+    .menu__panel {
+      inset-block-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-end: unset;
+      transform: translate(-100%, -100%);
+    }
+  }
+
+  &.menu--position-top-left-edge {
+    .menu__panel {
+      inset-block-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: 0;
+      inset-inline-end: unset;
+      transform: translate(0, -100%);
+    }
+  }
+
+  &.menu--position-top-center {
+    .menu__panel {
+      inset-block-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: 50%;
+      inset-inline-end: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  &.menu--position-top-right {
+    .menu__panel {
+      inset-block-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: unset;
+      inset-inline-end: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      transform: translate(100%, -100%);
+    }
+  }
+
+  &.menu--position-top-right-edge {
+    .menu__panel {
+      inset-block-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: unset;
+      inset-inline-end: 0;
+      transform: translate(0, -100%);
+    }
+  }
+
+  &.menu--position-center-left {
+    .menu__panel {
+      inset-block: 50%;
+      inset-inline-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-block-end: unset;
+      inset-inline-end: unset;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  &.menu--position-center-right {
+    .menu__panel {
+      inset-block: 50%;
+      inset-inline-start: unset;
+      inset-inline-end: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-block-end: unset;
+      transform: translate(100%, -50%);
+    }
+  }
+
+  &.menu--position-bottom-left {
+    .menu__panel {
+      inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: calc(-1 * var(--_op-menu-panel-trigger-distance));
+      inset-inline-end: unset;
+      transform: translateX(-100%);
+    }
+  }
+
+  &.menu--position-bottom-left-edge {
+    .menu__panel {
+      inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: 0;
+      inset-inline-end: unset;
+      transform: unset;
+    }
+  }
+
+  &.menu--position-bottom-right-edge {
+    .menu__panel {
+      inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: unset;
+      inset-inline-end: 0;
+      transform: unset;
+    }
+  }
+
+  &.menu--position-bottom-center {
+    .menu__panel {
+      inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: 50%;
+      inset-inline-end: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.menu--position-bottom-right {
+    .menu__panel {
+      inset-block-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      inset-inline-start: calc(100% + var(--_op-menu-panel-trigger-distance));
+      transform: unset;
+    }
+  }
+}

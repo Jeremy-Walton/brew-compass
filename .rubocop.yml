@@ -72,3 +72,6 @@ Style/Documentation:
 
 Rails/I18nLocaleTexts:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false

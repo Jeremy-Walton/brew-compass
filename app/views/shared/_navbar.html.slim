@@ -15,3 +15,21 @@
     = active_link_to brewing_methods_path, class: 'btn btn--no-border', class_active: 'btn--active' do
       = icon('flask')
       | Brewing Methods
+  nav.navbar__content
+    .menu.menu--position-button-right-edge data-controller='menu' data-action="keydown.esc->menu#close"
+      button.menu__trigger.avatar.avatar--medium type="button" data-action='click->menu#clickTrigger'
+        = current_user.initials
+
+      .menu__panel data-menu-target='panel'
+        - if current_user.super_admin?
+          = link_to admin_users_path, class: 'btn btn--no-border' do
+            = icon('user-circle-gear')
+            | Admin
+
+        = link_to edit_user_registration_path, class: 'btn btn--no-border' do
+          = icon('faders')
+          | Settings
+
+        = button_to destroy_user_session_path, method: :delete, class: 'btn btn--no-border full-width' do
+          = icon('sign-out')
+          | Log Out
