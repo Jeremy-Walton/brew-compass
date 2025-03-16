@@ -1,0 +1,32 @@
+.btn {
+  &.btn--destructive,
+  &.btn--delete {
+    /* Borderless State */
+    &.btn--no-border {
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--op-color-alerts-danger-base);
+
+      /* Borderless + Active State */
+      &.btn--active {
+        background-color: var(--op-color-alerts-danger-plus-five);
+        box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-plus-three);
+        color: var(--op-color-alerts-danger-on-plus-five);
+      }
+
+      /* Borderless + Hover State */
+      &:hover {
+        background-color: var(--op-color-alerts-danger-plus-eight);
+        box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-plus-five);
+        color: var(--op-color-alerts-danger-on-plus-eight);
+      }
+
+      /* Borderless + Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-alerts-danger-plus-eight);
+        box-shadow: var(--op-input-focus-danger);
+        color: var(--op-color-alerts-danger-on-plus-eight);
+      }
+    }
+  }
+}
