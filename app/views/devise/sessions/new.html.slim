@@ -1,0 +1,12 @@
+.flex.flex-col.items-center
+  h2.margin-top-lg= t(".sign_in", default: "Log in")
+  .card.container--xs.margin-top-md
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.input :email, required: true, autofocus: true, autocomplete: "email"
+      = f.input :password, required: true, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        = f.input :remember_me, as: :boolean
+      .actions
+        = f.submit t(".sign_in", default: "Log in"), class: "btn btn--primary"
+    .margin-top-md
+      = render "devise/shared/links"
