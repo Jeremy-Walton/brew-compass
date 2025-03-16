@@ -8,14 +8,17 @@ module Admin
 
     def edit
       @user = User.find(params[:id])
+
+      render layout: 'modal'
     end
 
     def update
       @user = User.find(params[:id])
+
       if @user.update(user_params)
         redirect_to admin_users_url, notice: 'User was updated successfully'
       else
-        render :edit, status: :unprocessable_entity
+        render :edit, layout: 'modal', status: :unprocessable_entity
       end
     end
 

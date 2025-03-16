@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :users
-  end
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -15,6 +9,11 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+
+  # TODO: These probably should be updated
   resources :pages, only: %i[] do
     get :brew, on: :collection
   end
@@ -23,7 +22,10 @@ Rails.application.routes.draw do
   resources :brewing_methods, except: :show
   resources :brews, except: :show
 
+  namespace :admin do
+    resources :users, only: %i[index edit update]
+  end
+
   # Defines the root path route ("/")
-  # root "pages#home"
-  root to: "admin/users#index"
+  root "pages#home"
 end
