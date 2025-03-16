@@ -1,0 +1,27 @@
+.avatar {
+  /* Public API (customizable component options) */
+  --_op-avatar-font-size-small: var(--op-font-x-small);
+  --_op-avatar-font-size-medium: var(--op-font-medium);
+  --_op-avatar-font-size-large: var(--op-font-x-large);
+
+  /* Private API (component option defaults) */
+  --__op-avatar-font-size: var(--_op-avatar-font-size-large);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--__op-avatar-font-size);
+
+  /* Size Modifiers */
+  &.avatar--small {
+    --__op-avatar-font-size: var(--_op-avatar-font-size-small);
+  }
+
+  &.avatar--medium {
+    --__op-avatar-font-size: var(--_op-avatar-font-size-medium);
+  }
+
+  &.avatar--large {
+    --__op-avatar-font-size: var(--_op-avatar-font-size-large);
+  }
+}

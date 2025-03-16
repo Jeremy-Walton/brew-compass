@@ -22,4 +22,12 @@ RSpec.describe User, type: :model do
       expect(user.full_name).to eq('John Doe')
     end
   end
+
+  describe '#initials' do
+    it 'returns the initials of the user' do
+      user = create(:user, first_name: 'John', last_name: 'Doe')
+
+      expect(user.initials).to eq('JD')
+    end
+  end
 end
