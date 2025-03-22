@@ -8,6 +8,7 @@
   &.navbar--footer {
     box-shadow: var(--op-border-top) var(--_op-navbar-border-color);
     padding: 0;
+    padding-block-end: var(--op-space-large);
     justify-content: center;
 
     .btn {
