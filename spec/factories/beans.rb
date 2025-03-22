@@ -8,5 +8,6 @@ FactoryBot.define do
     taste_profile { '' }
     decaf { false }
     notes { '' }
+    user
   end
 end

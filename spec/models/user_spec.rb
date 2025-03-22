@@ -15,6 +15,12 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:role) }
   end
 
+  describe 'associations' do
+    it { should have_many(:brews).dependent(:destroy) }
+    it { should have_many(:beans).dependent(:destroy) }
+    it { should have_many(:brewing_methods).dependent(:destroy) }
+  end
+
   describe '#full_name' do
     it 'returns the full name of the user' do
       user = create(:user, first_name: 'John', last_name: 'Doe')

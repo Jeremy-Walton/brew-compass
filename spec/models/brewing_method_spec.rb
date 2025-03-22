@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe BrewingMethod, type: :model do
   describe 'associations' do
     it { should have_many(:brews).dependent(:restrict_with_error) }
+    it { should belong_to(:user) }
   end
 
   describe 'validations' do

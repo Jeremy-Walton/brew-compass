@@ -12,7 +12,7 @@ RSpec.describe 'Brewings', type: :system do
   end
 
   it 'lists brews' do
-    brews = create_list(:brew, 3)
+    brews = create_list(:brew, 3, user:)
     visit brews_path
 
     brews.each do |brew|
@@ -39,7 +39,7 @@ RSpec.describe 'Brewings', type: :system do
   end
 
   it 'allows a user to edit a brew' do
-    brew = create(:brew)
+    brew = create(:brew, user:)
     visit brews_path
 
     within data_test(dom_id(brew)) do
@@ -55,7 +55,7 @@ RSpec.describe 'Brewings', type: :system do
   end
 
   it 'allows a user to delete a brew' do
-    brew = create(:brew)
+    brew = create(:brew, user:)
     visit brews_path
 
     within data_test(dom_id(brew)) do

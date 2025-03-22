@@ -6,6 +6,7 @@ RSpec.describe Brew, type: :model do
   describe 'associations' do
     it { should belong_to(:brewing_method) }
     it { should belong_to(:bean) }
+    it { should belong_to(:user) }
   end
 
   describe 'validations' do

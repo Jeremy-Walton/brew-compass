@@ -2,27 +2,23 @@
 
 class BrewingMethodsController < ApplicationController
   def index
-    # @brewing_methods = current_user.brewing_methods
-    @brewing_methods = BrewingMethod.all
+    @brewing_methods = current_user.brewing_methods
   end
 
   def new
-    # @brewing_method = current_user.brewing_methods.build
-    @brewing_method = BrewingMethod.new
+    @brewing_method = current_user.brewing_methods.build
 
     render layout: 'modal'
   end
 
   def edit
-    # @brewing_method = current_user.brewing_methods.find(params[:id])
-    @brewing_method = BrewingMethod.find(params[:id])
+    @brewing_method = current_user.brewing_methods.find(params[:id])
 
     render layout: 'modal'
   end
 
   def create
-    # @brewing_method = current_user.brewing_methods.new(brewing_method_params)
-    @brewing_method = BrewingMethod.new(brewing_method_params)
+    @brewing_method = current_user.brewing_methods.new(brewing_method_params)
 
     if @brewing_method.save
       redirect_to brewing_methods_path, notice: 'Brewing Method was successfully created.'
@@ -32,8 +28,7 @@ class BrewingMethodsController < ApplicationController
   end
 
   def update
-    # @brewing_method = current_user.brewing_methods.find(params[:id])
-    @brewing_method = BrewingMethod.find(params[:id])
+    @brewing_method = current_user.brewing_methods.find(params[:id])
 
     if @brewing_method.update(brewing_method_params)
       redirect_to brewing_methods_path, notice: 'Brewing Method was successfully updated.'
@@ -43,7 +38,7 @@ class BrewingMethodsController < ApplicationController
   end
 
   def destroy
-    @brewing_method = BrewingMethod.find(params[:id])
+    @brewing_method = current_user.brewing_methods.find(params[:id])
     @brewing_method.destroy
 
     redirect_to brewing_methods_path, notice: 'Brewing Method was successfully deleted.'
