@@ -1,7 +1,12 @@
 .navbar {
+  --_bc-navbar-logo-size: calc(var(--op-size-unit) * 12);
+
   .navbar__brand {
     img {
-      width: 100%;
+      width: var(--_bc-navbar-logo-size);
+      min-width: var(--_bc-navbar-logo-size);
+      height: var(--_bc-navbar-logo-size);
+      min-height: var(--_bc-navbar-logo-size);
     }
   }
 
