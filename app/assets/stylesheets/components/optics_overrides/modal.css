@@ -1,3 +1,5 @@
 .modal {
   --_op-modal-width: calc(var(--op-size-unit)* 200); /* 800px */
+
+  max-width: calc(100% - var(--op-space-medium));
 }

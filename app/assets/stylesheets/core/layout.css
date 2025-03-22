@@ -1,3 +1,17 @@
 .app__content {
   padding: var(--op-space-large);
 }
+
+/* --op-breakpoint-small */
+@media (width < 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* --op-breakpoint-small */
+@media (width >= 768px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}

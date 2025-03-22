@@ -1,8 +1,8 @@
 = simple_form_for @bean do |f|
-  .flex.flex-evenly-spaced.gap-md
+  .grid-evenly-spaced.gap-md
     = f.input :name, placeholder: 'Name'
     = f.input :roaster, placeholder: 'e.g. Five Star, Happy Mug, etc.'
-  .flex.flex-evenly-spaced.gap-md
+  .grid-evenly-spaced.gap-md
     = f.input :roast_date, as: :datetime, html5: true
     = f.input :taste_profile, placeholder: 'e.g. chocolate, nutty, fruity'
   = f.input :notes, as: :text
