@@ -13,7 +13,7 @@
           = icon('trash')
           .sr-only Delete
   .card__body
-    .flex.gap-xl
+    .flex.gap-xl.flex-wrap
       .text-pair
         span.text-pair__title Date
         span.text-pair__subtitle = brew.created_at.strftime('%B %d, %Y')

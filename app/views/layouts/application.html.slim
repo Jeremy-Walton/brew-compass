@@ -13,3 +13,7 @@ html lang='en'
       = render 'shared/flash'
 
       = yield
+
+    - if current_user
+      footer.app__footer.hide-on-desktop
+        = render 'shared/footer'

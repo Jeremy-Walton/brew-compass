@@ -1,4 +1,17 @@
 .btn {
+  /* Undo mobile size limitation */
+  &.btn--small {
+    --__op-btn-height: var(--_op-btn-height-small);
+    --__op-btn-font-size: var(--_op-btn-font-small);
+    --__op-btn-padding: var(--_op-btn-padding-small);
+  }
+
+  &.btn--medium {
+    --__op-btn-height: var(--_op-btn-height-medium);
+    --__op-btn-font-size: var(--_op-btn-font-medium);
+    --__op-btn-padding: var(--_op-btn-padding-medium);
+  }
+
   &.btn--destructive,
   &.btn--delete {
     /* Borderless State */
