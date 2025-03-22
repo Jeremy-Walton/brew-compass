@@ -10,7 +10,7 @@ RSpec.describe 'Beans', type: :system do
   end
 
   it 'lists beans' do
-    beans = create_list(:bean, 3)
+    beans = create_list(:bean, 3, user:)
     visit beans_path
 
     beans.each do |bean|
@@ -42,7 +42,7 @@ RSpec.describe 'Beans', type: :system do
   end
 
   it 'allows a user to edit a bean' do
-    bean = create(:bean)
+    bean = create(:bean, user:)
     visit beans_path
 
     within data_test(dom_id(bean)) do
@@ -58,7 +58,7 @@ RSpec.describe 'Beans', type: :system do
   end
 
   it 'allows a user to delete a bean' do
-    bean = create(:bean)
+    bean = create(:bean, user:)
     visit beans_path
 
     within data_test(dom_id(bean)) do

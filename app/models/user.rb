@@ -10,6 +10,12 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :role, presence: true
 
+  # Associations
+
+  has_many :brews, dependent: :destroy
+  has_many :beans, dependent: :destroy
+  has_many :brewing_methods, dependent: :destroy
+
   def full_name
     "#{first_name} #{last_name}"
   end

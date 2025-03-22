@@ -13,11 +13,6 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # TODO: These probably should be updated
-  resources :pages, only: %i[] do
-    get :brew, on: :collection
-  end
-
   resources :beans, except: :show
   resources :brewing_methods, except: :show
   resources :brews, except: :show

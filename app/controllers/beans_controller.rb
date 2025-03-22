@@ -2,27 +2,23 @@
 
 class BeansController < ApplicationController
   def index
-    # @beans = current_user.beans
-    @beans = Bean.all
+    @beans = current_user.beans
   end
 
   def new
-    # @bean = current_user.beans.build
-    @bean = Bean.new
+    @bean = current_user.beans.build
 
     render layout: 'modal'
   end
 
   def edit
-    # @bean = current_user.beans.find(params[:id])
-    @bean = Bean.find(params[:id])
+    @bean = current_user.beans.find(params[:id])
 
     render layout: 'modal'
   end
 
   def create
-    # @bean = current_user.beans.new(bean_params)
-    @bean = Bean.new(bean_params)
+    @bean = current_user.beans.new(bean_params)
 
     if @bean.save
       redirect_to beans_path, notice: 'Bean was successfully created.'
@@ -32,8 +28,7 @@ class BeansController < ApplicationController
   end
 
   def update
-    # @bean = current_user.beans.find(params[:id])
-    @bean = Bean.find(params[:id])
+    @bean = current_user.beans.find(params[:id])
 
     if @bean.update(bean_params)
       redirect_to beans_path, notice: 'Bean was successfully updated.'
@@ -43,7 +38,7 @@ class BeansController < ApplicationController
   end
 
   def destroy
-    @bean = Bean.find(params[:id])
+    @bean = current_user.beans.find(params[:id])
     @bean.destroy
 
     redirect_to beans_path, notice: 'Bean was successfully deleted.'

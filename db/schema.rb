@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_16_194244) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_22_172836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,6 +23,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_194244) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_beans_on_user_id"
   end
 
   create_table "brewing_methods", force: :cascade do |t|
@@ -30,6 +32,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_194244) do
     t.string "prep_type", default: "pourover", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_brewing_methods_on_user_id"
   end
 
   create_table "brews", force: :cascade do |t|
@@ -38,8 +42,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_194244) do
     t.integer "rating", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["bean_id"], name: "index_brews_on_bean_id"
     t.index ["brewing_method_id"], name: "index_brews_on_brewing_method_id"
+    t.index ["user_id"], name: "index_brews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +64,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_194244) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "beans", "users"
+  add_foreign_key "brewing_methods", "users"
   add_foreign_key "brews", "beans"
   add_foreign_key "brews", "brewing_methods"
+  add_foreign_key "brews", "users"
 end

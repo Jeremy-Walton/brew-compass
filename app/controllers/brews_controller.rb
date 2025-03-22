@@ -2,27 +2,23 @@
 
 class BrewsController < ApplicationController
   def index
-    # @brews = current_user.brews
-    @brews = Brew.all
+    @brews = current_user.brews
   end
 
   def new
-    # @brew = current_user.brews.build
-    @brew = Brew.new
+    @brew = current_user.brews.build
 
     render layout: 'modal'
   end
 
   def edit
-    # @brew = current_user.brews.find(params[:id])
-    @brew = Brew.find(params[:id])
+    @brew = current_user.brews.find(params[:id])
 
     render layout: 'modal'
   end
 
   def create
-    # @brew = current_user.brews.new(brew_params)
-    @brew = Brew.new(brew_params)
+    @brew = current_user.brews.new(brew_params)
 
     if @brew.save
       redirect_to brews_path, notice: 'Brew was successfully created.'
@@ -32,8 +28,7 @@ class BrewsController < ApplicationController
   end
 
   def update
-    # @brew = current_user.brews.find(params[:id])
-    @brew = Brew.find(params[:id])
+    @brew = current_user.brews.find(params[:id])
 
     if @brew.update(brew_params)
       redirect_to brews_path, notice: 'Brew was successfully updated.'
@@ -43,8 +38,7 @@ class BrewsController < ApplicationController
   end
 
   def destroy
-    # @brew = current_user.brews.find(params[:id])
-    @brew = Brew.find(params[:id])
+    @brew = current_user.brews.find(params[:id])
     @brew.destroy
 
     redirect_to brews_path, notice: 'Brew was successfully deleted.'

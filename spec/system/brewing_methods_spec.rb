@@ -10,7 +10,7 @@ RSpec.describe 'Brewing Methods', type: :system do
   end
 
   it 'lists brewing methods' do
-    brewing_methods = create_list(:brewing_method, 3)
+    brewing_methods = create_list(:brewing_method, 3, user:)
     visit brewing_methods_path
 
     brewing_methods.each do |brewing_method|
@@ -35,7 +35,7 @@ RSpec.describe 'Brewing Methods', type: :system do
   end
 
   it 'allows a user to edit a brewing method' do
-    brewing_method = create(:brewing_method)
+    brewing_method = create(:brewing_method, user:)
     visit brewing_methods_path
 
     within data_test(dom_id(brewing_method)) do
@@ -51,7 +51,7 @@ RSpec.describe 'Brewing Methods', type: :system do
   end
 
   it 'allows a user to delete a brewing method' do
-    brewing_method = create(:brewing_method)
+    brewing_method = create(:brewing_method, user:)
     visit brewing_methods_path
 
     within data_test(dom_id(brewing_method)) do
