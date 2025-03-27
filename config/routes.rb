@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/")
-  root "brews#index"
+  root "pages#index"
 end

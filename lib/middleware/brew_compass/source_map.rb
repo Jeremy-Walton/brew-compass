@@ -13,7 +13,13 @@ module Middleware
       end
 
       def call(env)
-        serve?(env) ? @file_server.call(env.tap { |env| env['PATH_INFO'].sub!(%r{^/[\w-]+[^/]}, '') }) : @app.call(env)
+        if serve?(env)
+          @file_server.call(env.tap do |environment|
+            environment['PATH_INFO'].sub!(%r{^/[\w-]+[^/]}, '')
+          end)
+        else
+          @app.call(env)
+        end
       end
 
       private
