@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   resources :brewing_methods, except: :show
   resources :brews, except: :show
 
+  resources :pages, only: :index
+
   namespace :admin do
     resources :users, only: %i[index edit update]
   end
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "brews#index"
 end

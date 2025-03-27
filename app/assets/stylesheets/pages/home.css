@@ -1,0 +1,75 @@
+/* Hero Section */
+
+.hero {
+  background-color: var(--op-color-primary-plus-six);
+  color: var(--op-color-primary-on-plus-six);
+  border-radius: var(--op-radius-large);
+
+  display: grid;
+  justify-items: center;
+  gap: var(--op-space-x-large);
+
+  padding: var(--op-space-2x-large);
+
+  .hero__name {
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: var(--op-font-6x-large);
+    font-weight: var(--op-font-weight-semi-bold);
+    margin: 0;
+  }
+
+  .hero__subtitle {
+    font-size: var(--op-font-2x-large);
+    color: var(--op-color-primary-on-plus-six-alt);
+    margin: 0;
+  }
+}
+
+/* Features Section */
+
+.features {
+  --_bc-feature-min-width: calc(var(--op-size-unit) * 75); /* 300px */
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--_bc-feature-min-width), 1fr));
+    gap: var(--op-space-large);
+  }
+}
+
+.feature {
+  --_bc-feature-icon-size: calc(var(--op-size-unit) * 15); /* 60px */
+
+  display: grid;
+  justify-items: center;
+  gap: var(--op-space-small);
+  text-align: center;
+
+  .feature__icon {
+    --__op-icon-font-size: var(--_op-icon-font-size-x-large);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--op-color-primary-base);
+    color: var(--op-color-primary-on-base);
+    border-radius: var(--op-radius-circle);
+    padding: var(--op-space-2x-large);
+  }
+
+  .feature__title {
+    font-size: var(--op-font-x-large);
+    margin: 0;
+  }
+
+  .feature__description {
+    color: var(--op-color-on-background-alt);
+    margin: 0;
+    text-wrap: balance;
+  }
+}
