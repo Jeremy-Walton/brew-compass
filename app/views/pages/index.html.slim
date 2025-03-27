@@ -1,1 +1,41 @@
-span Welcome to Brew Compass!
+.hero
+  .hero__name
+    h1.hero__title Brew Compass
+    p.hero__subtitle Track your coffee, Find your taste.
+
+  = link_to 'Sign In', new_user_session_path, class: 'btn btn--primary'
+
+section.page-section.features
+  h2.page-section__title Key Features
+  .features__grid
+    .card.card--padded.feature
+      = icon('path', additional_classes: 'feature__icon')
+      h3.feature__title Track Your Brews
+      p.feature__description Log details of every coffee you make.
+    .card.card--padded.feature
+      = icon('map-trifold', additional_classes: 'feature__icon')
+      h3.feature__title Develop Taste Profiles
+      p.feature__description Discover your preferred coffee characteristics.
+    .card.card--padded.feature
+      = icon('compass-rose', additional_classes: 'feature__icon')
+      h3.feature__title Hone Your Espresso
+      p.feature__description Get expert tips to perfect your espresso shots.
+
+section.page-section.page-section--accent
+  .page-section__grid
+    .page-section__text
+      h2.page-section__title Understand Your Palate
+      p.page-section__description Brew Compass helps you identify the nuances in your coffee. By tracking variables like origin, roast level, and brewing method, you'll start to see patterns in what you enjoy. Visualize your taste preferences and become a true coffee connoisseur.
+    .page-section__image
+      = image_tag 'radar.png', alt: 'Taste Profile'
+
+section.page-section.espresso-tips
+  .page-section__grid
+    .page-section__image
+      = image_tag 'radar.png', alt: 'Espresso Tips'
+    .page-section__text
+      h2.page-section__title Level Up Your Espresso
+      p.page-section__description Dialing in espresso can be challenging. Brew Compass provides you with actionable tips and guidance based on your brewing data and common issues. From grind size adjustments to tamping techniques, elevate your home espresso game.
+
+footer
+  p.text-center © 2025 Brew Compass. All rights reserved.

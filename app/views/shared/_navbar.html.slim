@@ -1,35 +1,39 @@
 .navbar
-  = link_to root_path, class: 'navbar__brand' do
+  = link_to pages_path, class: 'navbar__brand' do
     = image_tag 'logo-navbar.webp', alt: 'Brew Compass', class: 'navbar__logo'
 
-  nav.navbar__content.hide-on-mobile
-    = active_link_to root_path, class: 'btn btn--no-border', class_active: 'btn--active', active: [['pages'], ['home']] do
-      = icon('compass')
-      | Home
-    = active_link_to brews_path, class: 'btn btn--no-border', class_active: 'btn--active' do
-      = icon('coffee')
-      | Brews
-    = active_link_to beans_path, class: 'btn btn--no-border', class_active: 'btn--active' do
-      = icon('coffee-bean')
-      | Beans
-    = active_link_to brewing_methods_path, class: 'btn btn--no-border', class_active: 'btn--active' do
-      = icon('flask')
-      | Brewing Methods
-  nav.navbar__content.navbar__content--justify-end
-    .menu.menu--position-button-right-edge data-controller='menu' data-action="keydown.esc->menu#close"
-      button.menu__trigger.avatar.avatar--medium type="button" data-action='click->menu#clickTrigger'
-        = current_user.initials
+  - if current_user
+    nav.navbar__content.hide-on-mobile
+      = active_link_to brews_path, class: 'btn btn--no-border', class_active: 'btn--active', active: [['brews']] do
+        = icon('coffee')
+        | Brews
+      = active_link_to beans_path, class: 'btn btn--no-border', class_active: 'btn--active' do
+        = icon('coffee-bean')
+        | Beans
+      = active_link_to brewing_methods_path, class: 'btn btn--no-border', class_active: 'btn--active' do
+        = icon('flask')
+        | Brewing Methods
 
-      .menu__panel data-menu-target='panel'
-        - if current_user.super_admin?
-          = link_to admin_users_path, class: 'btn btn--no-border' do
-            = icon('user-circle-gear')
-            | Admin
+    nav.navbar__content.navbar__content--justify-end
+      .menu.menu--position-button-right-edge data-controller='menu' data-action="keydown.esc->menu#close"
+        button.menu__trigger.avatar.avatar--medium type="button" data-action='click->menu#clickTrigger'
+          = current_user.initials
 
-        = link_to edit_user_registration_path, class: 'btn btn--no-border' do
-          = icon('faders')
-          | Settings
+        .menu__panel data-menu-target='panel'
+          - if current_user.super_admin?
+            = link_to admin_users_path, class: 'btn btn--no-border' do
+              = icon('user-circle-gear')
+              | Admin
 
-        = button_to destroy_user_session_path, method: :delete, class: 'btn btn--no-border full-width' do
-          = icon('sign-out')
-          | Log Out
+          = link_to edit_user_registration_path, class: 'btn btn--no-border' do
+            = icon('faders')
+            | Settings
+
+          = button_to destroy_user_session_path, method: :delete, class: 'btn btn--no-border full-width' do
+            = icon('sign-out')
+            | Log Out
+  - else
+    nav.navbar__content.navbar__content--justify-end
+      = link_to new_user_session_path, class: 'btn' do
+        = icon('sign-in')
+        | Sign In
