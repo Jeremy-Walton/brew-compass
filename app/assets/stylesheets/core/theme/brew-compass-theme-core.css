@@ -2,4 +2,9 @@
   --op-color-primary-h: 25deg;
   --op-color-primary-s: 26%;
   --op-color-primary-l: 40%;
+
+  --op-font-family: 'Tofino Text', 'Noto Sans', sans-serif;
+  --op-font-family-header: 'Tofino', 'Noto Sans', sans-serif;
+
+  --op-card-shadow: var(--op-color-primary-plus-seven) 0px -20px 76px -40px;
 }

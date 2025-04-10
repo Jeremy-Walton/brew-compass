@@ -3,7 +3,7 @@
     .card__header
       = image_tag 'logo-login.webp', alt: 'Logo'
     .card__body
-      h1 = t(".sign_up", default: "Sign Up")
+      h1.title = t(".sign_up", default: "Sign Up")
       = f.input :first_name, required: true, autofocus: true
       = f.input :last_name, required: true
       = f.input :email, required: true, autocomplete: "email"

@@ -3,7 +3,7 @@
     .card__header
       = image_tag 'logo-login.webp', alt: 'Logo'
     .card__body
-      h1 = t(".forgot_your_password", default: "Forgot your password?")
+      h1.title = t(".forgot_your_password", default: "Forgot your password?")
 
       = f.input :email, required: true, autofocus: true, autocomplete: "email"
 

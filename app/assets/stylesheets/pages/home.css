@@ -1,9 +1,10 @@
 /* Hero Section */
 
 .hero {
-  background-color: var(--op-color-primary-plus-six);
-  color: var(--op-color-primary-on-plus-six);
-  border-radius: var(--op-radius-large);
+  background: radial-gradient(100% 100% at 50% 50%, var(--op-color-primary-plus-five) 0%, var(--op-color-background) 100%);
+  color: var(--op-color-primary-on-plus-five);
+  box-shadow: var(--op-card-shadow);
+  border-radius: var(--op-radius-x-large);
 
   display: grid;
   justify-items: center;
@@ -16,6 +17,7 @@
   }
 
   .hero__title {
+    font-family: var(--op-font-family-header);
     font-size: var(--op-font-6x-large);
     font-weight: var(--op-font-weight-semi-bold);
     margin: 0;
