@@ -3,7 +3,7 @@
     .card__header
       = image_tag 'logo-login.webp', alt: 'Logo'
     .card__body
-      h1 = t(".change_your_password", default: "Change your password")
+      h1.title = t(".change_your_password", default: "Change your password")
 
       = f.hidden_field :reset_password_token
 
