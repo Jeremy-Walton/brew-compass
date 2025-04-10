@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_22_172836) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_02_012409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -46,6 +46,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_22_172836) do
     t.index ["bean_id"], name: "index_brews_on_bean_id"
     t.index ["brewing_method_id"], name: "index_brews_on_brewing_method_id"
     t.index ["user_id"], name: "index_brews_on_user_id"
+  end
+
+  create_table "shipped_releases", force: :cascade do |t|
+    t.string "release_identifier", null: false
+    t.datetime "released_at", null: false
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

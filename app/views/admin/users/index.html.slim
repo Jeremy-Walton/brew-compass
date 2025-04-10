@@ -1,3 +1,7 @@
+.tab-group
+  = active_link_to 'Users', admin_users_path, class: 'tab', class_active: 'tab--active', active: [['admin/users']]
+  = link_to 'Releases', shipped_path, class: 'tab'
+
 section.page-section
   h1 Users
 

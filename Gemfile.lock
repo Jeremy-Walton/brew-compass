@@ -4,6 +4,14 @@ GIT
   specs:
     rolemodel_rails (0.13.0)
 
+PATH
+  remote: ../shipped
+  specs:
+    shipped (0.1.0)
+      rails (>= 8.0.1)
+      slim (~> 5.2)
+      slim-rails (~> 3.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -444,6 +452,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubocop-rails
+  shipped!
   shoulda-matchers (~> 6.0)
   simple_form (~> 5.3)
   slim (~> 5.2)
