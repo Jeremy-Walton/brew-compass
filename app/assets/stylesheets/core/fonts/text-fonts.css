@@ -1,0 +1,29 @@
+/*
+  Tofino supports:
+  font-weight: {anything between 100 and 900}
+  font-stretch: {anything between 50% and 125%}
+  font-style: {normal or italic}
+*/
+@font-face {
+  font-family: Tofino;
+  font-weight: 100 900;
+  font-style: normal;
+  font-stretch: 50% 125%;
+  font-synthesis: none;
+  font-display: block;
+  src: url('../../../fonts/TofinoVariable.ttf');
+}
+
+/*
+  Tofino Text supports:
+  font-weight: {anything between 300 and 700}
+  font-style: {normal or italic}
+*/
+@font-face {
+  font-family: Tofino Text;
+  font-weight: 300 700;
+  font-style: normal;
+  font-synthesis: none;
+  font-display: block;
+  src: url('../../../fonts/TofinoTextVar.ttf');
+}

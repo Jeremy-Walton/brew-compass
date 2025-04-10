@@ -1,0 +1,23 @@
+.title {
+  --__title-size-small: var(--op-font-medium);
+  --__title-size-medium: var(--op-font-x-large);
+  --__title-size-large: var(--op-font-3x-large);
+
+  --_title-current-size: var(--__title-size-large);
+
+  font-family: var(--op-font-family-header);
+  font-weight: var(--op-font-weight-medium);
+  font-size: var(--_title-current-size);
+
+  &.title--small {
+    --_title-current-size: var(--__title-size-small);
+  }
+
+  &.title--medium {
+    --_title-current-size: var(--__title-size-medium);
+  }
+
+  &.title--large {
+    --_title-current-size: var(--__title-size-large);
+  }
+}

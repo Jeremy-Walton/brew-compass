@@ -16,6 +16,7 @@
   }
 
   .hero__title {
+    font-family: var(--op-font-family-header);
     font-size: var(--op-font-6x-large);
     font-weight: var(--op-font-weight-semi-bold);
     margin: 0;
