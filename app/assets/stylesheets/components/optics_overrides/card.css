@@ -1,3 +1,8 @@
 .card {
   contain: unset;
+
+  background: radial-gradient(100% 100% at 50% 50%, var(--op-color-primary-plus-five) 0%, var(--op-color-background) 100%);
+  color: var(--op-color-primary-on-plus-eight);
+  box-shadow: var(--op-card-shadow);
+  border-radius: var(--op-radius-x-large);
 }
