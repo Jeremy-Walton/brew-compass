@@ -73,7 +73,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda-matchers', '~> 6.0'
+  gem 'shoulda-matchers', '~> 6.5'
   gem 'test-prof'
   gem 'webdrivers'
 end
